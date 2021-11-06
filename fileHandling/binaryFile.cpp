@@ -32,14 +32,14 @@ int main(int argc, char const *argv[])
  		return 1;
  	}
  	
- 	int x;
+ 	int x = 0;
 
  	while(fin1.read((char *)&x,sizeof(int)))
  	{
  		cout << x << endl; 
  	}
 
-    fin1.close();
+    	fin1.close();
 
  	// Task 3: reading 5'th number
 	
@@ -47,17 +47,17 @@ int main(int argc, char const *argv[])
  	
  	fin2.seekg(5* sizeof(int)); // set a place for getting the input
  	fin2.read((char *)&x,sizeof(int));
-    cout << "The 5'th number is " << x << endl; 
+   	cout << "The 5'th number is " << x << endl; 
 
 
  	// Task 4: writing numbers to a certain place in a binary file
  	
- 	x = 8;
+ 	x = 10;
  	fin2.seekp(5* sizeof(int)); // set a place for putting the output
  	fin2.write((char *)&x,sizeof(int));
 	cout << "The 5'th number is " << x << endl; 
 	
-    fin2.close();
+    	fin2.close();
 
  	return 0;
 
